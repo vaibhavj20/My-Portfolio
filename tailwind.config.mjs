@@ -1,15 +1,27 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./app/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
+      },
+
+      transitionProperty: {
+        width: "width",
+        height: "height",
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        maincolor: "#c8f31d",
+      },
+      rotate: {
+        10: "10deg",
+        15: "15deg",
       },
     },
   },
