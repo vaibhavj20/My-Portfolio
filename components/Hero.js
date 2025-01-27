@@ -311,13 +311,13 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-start items-center space-x-4 lg:space-x-6 hover-target">
             <Link
               href="#"
-              className="px-5 py-3 lg:px-6 lg:py-3 border border-white rounded-lg hover:bg-white hover:text-black"
+              className="px-4 py-3 lg:px-6 lg:py-3 border border-white rounded-lg hover:bg-white hover:text-black"
             >
               Download CV{" "}
             </Link>
             <Link
               href="#"
-              className="px-5 py-3 lg:px-6 lg:py-3 bg-maincolor text-black rounded-lg hover:bg-opacity-90"
+              className="px-4 py-3 lg:px-6 lg:py-3 bg-maincolor text-black rounded-lg hover:bg-opacity-90"
             >
               Contact Me
             </Link>
