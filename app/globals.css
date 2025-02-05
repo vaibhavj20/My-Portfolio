@@ -27,6 +27,8 @@ body::before {
   pointer-events: none;
   opacity: 0.5;
   z-index: -1;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 ::selection {
@@ -83,4 +85,29 @@ body::before {
 
 .cursor-hover::after {
   transform: translate(-50%, -50%) scale(1);
+}
+
+/* For Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Loading animation */
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-loading {
+  animation: loading 1s infinite alternate;
+}
+
+/* Add this if you want to prevent scrolling during loading */
+body.loaded {
+  overflow: hidden !important;
+  height: 100% !important;
 }
