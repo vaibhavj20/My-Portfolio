@@ -93,7 +93,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative z-50 py-3">
+    <nav className="relative z-50 py-3 hover-target">
       <div className="container mx-auto px-4">
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center justify-between">
@@ -108,7 +108,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="w-1/3">
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-2">
               <SocialLink href="#" icon={<FaBehance />} />
               <SocialLink href="#" icon={<FaGithub />} />
               <SocialLink href="#" icon={<FaLinkedinIn />} />
@@ -117,10 +117,10 @@ export default function Navbar() {
           </div>
           <div className="w-1/3 text-right">
             <a
-              href="mailto:Gavi@website.com"
+              href="mailto:vaibhavjamdhade2062001@gmail.com"
               className="text-xs text-white hover:text-maincolor transition-colors"
             >
-              Gavi@website.com
+              vaibhavjamdhade2062001@gmail.com
             </a>
           </div>
         </div>
@@ -155,10 +155,10 @@ export default function Navbar() {
             </div>
 
             <a
-              href="mailto:Gavi@website.com"
+              href="mailto:vaibhavjamdhade2062001@gmail.com"
               className="text-lg text-white hover:text-maincolor transition-colors"
             >
-              Gavi@website.com
+              vaibhavjamdhade2062001@gmail.com
             </a>
           </div>
         )}
@@ -171,7 +171,7 @@ function SocialLink({ href, icon }) {
   return (
     <a
       href={href}
-      className="w-10 h-10 flex items-center justify-center text-sm border border-white/20 rounded-full hover:bg-white hover:text-[#1d1d1d] transition-colors"
+      className="w-9 h-9 flex items-center justify-center text-sm border border-white/20 rounded-full hover:bg-white hover:text-[#1d1d1d] transition-colors"
     >
       {icon}
     </a>
