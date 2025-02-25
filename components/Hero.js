@@ -132,7 +132,7 @@ const Hero = () => {
     <div id="hero" className="relative font-sora">
       {/* Background shape with responsive clip-path */}
       <div className="absolute inset-0">
-        <div className="w-full h-full lg:h-[610px] bg-transparent relative overflow-hidden rounded-lg">
+        <div className="w-full h-full lg:h-[610px] bg-transparent relative overflow-hidden rounded-md">
           {/* Main black shape with responsive clip-path */}
           <div className="absolute inset-0 bg-[#1d1d1d] clip-path-hero-desktop lg:clip-path-hero-mobile" />
         </div>
@@ -140,6 +140,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col lg:flex-row justify-between py-20 p-4 lg:p-10 min-w-0">
+        <div className="absolute top-80 left-[800px] w-20 h-20 bg-maincolor opacity-40 rounded-full blur-3xl" />
         {/* Left Section - Responsive Adjustments */}
         <div className="flex flex-col items-center space-y-6 w-full lg:w-[310px] border border-white/5 rounded-md p-4 lg:p-8 bg-[#1d1d1d] lg:mt-[30px] mb-8 lg:mb-0">
           <div className="relative w-[250px] lg:w-[285px] h-64 min-w-0">

@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Main from "@/components/Main";
 import Loader from "@/components/Loader";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ export default function Home() {
           <div className="">
             <Main />
           </div>
+          <Footer />
         </div>
       </main>
     </>

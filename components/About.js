@@ -14,10 +14,16 @@ const About = () => {
             <h2 className="text-xs text-white/80 uppercase tracking-[0.2em] mb-3">
               ABOUT ME
             </h2>
-            <div className="text-2xl lg:text-3xl font-medium">
+            {/* <div className="text-2xl lg:text-4xl font-medium">
               Who I Am
               <br />
               <span className="">
+                And <span className="text-maincolor">What I Do</span>
+              </span>
+            </div> */}
+            <div className="text-2xl lg:text-4xl font-medium">
+              <span className="block mb-2">Who I Am</span>
+              <span>
                 And <span className="text-maincolor">What I Do</span>
               </span>
             </div>

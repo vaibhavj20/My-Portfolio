@@ -1,66 +1,3 @@
-// "use client";
-// import Link from "next/link";
-// import Image from "next/image";
-// import { FaGithub, FaLinkedin, FaBehance, FaDribbble } from "react-icons/fa";
-// import Navbar from "./Navbar2";
-// import About from "./About";
-// import Skills from "./Skills";
-// import Education from "./Education";
-// import Projects from "./Projects";
-
-// const Main = () => {
-//   const scrollToSection = (sectionId) => {
-//     const element = document.getElementById(sectionId);
-//     if (element) {
-//       element.scrollIntoView({
-//         behavior: "smooth",
-//         block: "start",
-//       });
-//     }
-//   };
-
-//   return (
-//     <div className="relative font-sora">
-//       {/* Background shape with responsive clip-path */}
-//       <div className="absolute inset-0">
-//         <div className="w-full h-full bg-transparent relative overflow-hidden rounded-lg">
-//           {/* Main black shape with consistent gap */}
-//           <div className="absolute inset-0 bg-[#1d1d1d] clip-path-below" />
-//         </div>
-//       </div>
-
-//       {/* Navbar Component */}
-//       <Navbar scrollToSection={scrollToSection} />
-
-//       {/* Content */}
-//       <div className="">
-//         <Education />
-//         <About />
-//         <Skills />
-//         <Projects />
-//       </div>
-
-//       <style jsx global>{`
-//         .clip-path-below {
-//           clip-path: polygon(100% 0, 40% 0, 33% 6%, 0 6%, 0 100%, 100% 100%);
-//         }
-
-//         @media (max-width: 1023px) {
-//           .clip-path-below {
-//             clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-//           }
-//         }
-
-//         html {
-//           scroll-behavior: smooth;
-//         }
-//       `}</style>
-//     </div>
-//   );
-// };
-
-// export default Main;
-
 "use client";
 
 import Link from "next/link";
@@ -73,6 +10,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Education from "./Education";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 const CircularProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -139,10 +77,10 @@ const Main = () => {
   };
 
   return (
-    <div className="relative min-h-screen font-sora">
+    <div className="relative min-h-screen font-sora p-5">
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-transparent">
-          <div className="absolute inset-0 bg-[#1d1d1d] clip-path-below" />
+          <div className="absolute inset-0 bg-[#1d1d1d] clip-path-below rounded-md" />
         </div>
       </div>
 
@@ -151,9 +89,10 @@ const Main = () => {
 
         <div className="relative">
           <Education />
-          <About />
+          {/* <About /> */}
           <Skills />
           <Projects />
+          <Contact />
         </div>
       </div>
 
@@ -163,11 +102,12 @@ const Main = () => {
           -webkit-clip-path: polygon(
             100% 0,
             40% 0,
-            33% 4%,
-            0 4%,
+            33% 2.2%,
+            0 2.2%,
             0 100%,
             100% 100%
           );
+          border-radius: 6px;
         }
 
         @media (max-width: 1023px) {

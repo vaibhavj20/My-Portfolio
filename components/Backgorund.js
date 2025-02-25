@@ -11,7 +11,7 @@ export default function Background() {
         {[...Array(5)].map((_, index) => (
           <span
             key={index}
-            className="h-full w-[10%] mx-[5%] border-r border-white/5 border-l border-dashed border-l-white/5"
+            className="h-full w-[10%] mx-[5%] border-r border-white/10 border-l border-dashed border-l-white/10"
           ></span>
         ))}
       </div>
