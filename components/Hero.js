@@ -70,7 +70,7 @@ const Hero = () => {
         <div className="w-full lg:w-3/4 lg:pl-16 xl:pl-20 text-center lg:text-left min-w-0">
           <div className="mb-8 sm:mb-12 mt-4 lg:mt-8 font-medium space-y-3">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
-              Hi, I&apos;m{" "}
+              Hello, I&apos;m{" "}
               <span className="text-maincolor">Vaibhav Jamdhade</span>,
             </h1>
 
@@ -102,12 +102,13 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="flex justify-center lg:justify-start items-center space-x-4 lg:space-x-6 hover-target">
-            <Link
-              href="#"
-              className="px-4 py-2.5 sm:px-6 sm:py-3 border border-white rounded-lg hover:bg-white hover:text-black transition-colors text-sm sm:text-base"
+            <a
+              href="/resume.pdf"
+              download="Vaibhav_Jamdhade_Resume.pdf"
+              className="px-4 py-2.5 sm:px-6 sm:py-3 border border-white rounded-lg hover:bg-white hover:text-black transition-colors text-sm sm:text-base inline-block"
             >
               Download CV
-            </Link>
+            </a>
             <a
               href="#contact"
               onClick={(e) => {
