@@ -3,8 +3,8 @@ import CustomCursor from "@/components/CustomCursor";
 import CircularProgress from "@/components/CircularProgress";
 
 export const metadata = {
-  title: "Vaibhav Jamdhade Portfolio",
-  description: "Frontend Developer",
+  title: "Vaibhav Jamdhade Projects",
+  description: "DevOps & Frontend Developer",
 };
 
 export default function RootLayout({ children }) {
