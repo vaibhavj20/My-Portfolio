@@ -40,19 +40,19 @@ const About = () => {
               />
             </div>
             <div className="relative p-6 lg:p-8 z-10 border border-white/10 rounded-lg">
-              <p className="text-white/80 text-lg leading-relaxed mb-4">
+              <p className="text-white/80 text-sm lg:text-base leading-relaxed mb-4">
                 Hi, I'm Vaibhav, a passionate Frontend Developer based in
                 Nashik. I hold a Bachelor's in Information Technology from
                 Sandip Foundation, where I discovered my love for crafting
                 beautiful and functional user interfaces.
               </p>
-              <p className="text-white/80 text-lg leading-relaxed mb-4">
+              <p className="text-white/80 text-sm lg:text-base leading-relaxed mb-4">
                 As a frontend developer, I thrive on turning creative ideas into
                 interactive and responsive web experiences. I enjoy working with
                 modern technologies to build intuitive designs that not only
                 look great but also provide seamless user experiences.
               </p>
-              <p className="text-white/80 text-lg leading-relaxed">
+              <p className="text-white/80 text-sm lg:text-base leading-relaxed">
                 My journey in frontend development is fueled by a constant
                 desire to learn and innovate. I believe in the power of clean
                 code, thoughtful design, and user-centric solutions to make the
@@ -64,7 +64,7 @@ const About = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <hr className="border-t border-white/20 my-12" />
+        <hr className="border-t border-white/10 my-8 lg:my-12" />
       </div>
     </>
   );
