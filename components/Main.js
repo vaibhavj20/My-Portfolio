@@ -19,10 +19,9 @@ const CircularProgress = () => {
   const handleScroll = () => {
     const totalHeight =
       document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min(
-      Math.max((window.scrollY / totalHeight) * 100, 0),
-      100
-    );
+    const progress = totalHeight > 0
+      ? Math.min(Math.max((window.scrollY / totalHeight) * 100, 0), 100)
+      : 0;
     setScrollProgress(progress);
 
     if (window.scrollY > 100) {
@@ -40,9 +39,8 @@ const CircularProgress = () => {
 
   return (
     <div
-      className={`fixed bottom-4 right-4 flex items-center justify-center z-[60] w-12 h-12 cursor-pointer transition-all duration-500 transform ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-      }`}
+      className={`fixed bottom-4 right-4 flex items-center justify-center z-[60] w-12 h-12 cursor-pointer transition-all duration-500 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+        }`}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
     >
       <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
@@ -77,7 +75,7 @@ const Main = () => {
   };
 
   return (
-    <div className="relative min-h-screen font-sora p-5">
+    <div className="relative min-h-screen font-sora px-3 sm:px-5 py-3">
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-transparent">
           <div className="absolute inset-0 bg-[#1d1d1d] clip-path-below rounded-md" />
@@ -85,9 +83,8 @@ const Main = () => {
       </div>
 
       <div className="relative z-10">
-        <Navbar scrollToSection={scrollToSection} />
-
         <div className="relative">
+          <Navbar />
           <Education />
           {/* <About /> */}
           <Skills />
@@ -98,12 +95,12 @@ const Main = () => {
 
       <style jsx global>{`
         .clip-path-below {
-          clip-path: polygon(100% 0, 40% 0, 33% 4%, 0 4%, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 42% 0, 35% 2%, 0 2%, 0 100%, 100% 100%);
           -webkit-clip-path: polygon(
             100% 0,
-            40% 0,
-            33% 2.2%,
-            0 2.2%,
+            41% 0,
+            33.5% 2%,
+            0 2%,
             0 100%,
             100% 100%
           );
@@ -114,6 +111,7 @@ const Main = () => {
           .clip-path-below {
             clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
             -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            border-radius: 6px;
           }
         }
 

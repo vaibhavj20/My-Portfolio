@@ -57,14 +57,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sora relative overflow-hidden">
+    <section id="contact" className="pt-4 pb-8 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sora relative overflow-hidden">
       <div className="flex flex-col lg:flex-row gap-16 items-start">
 
         {/* Left Side: Career-Focused Messaging */}
         <div className="lg:w-1/2 space-y-8 sticky top-32">
           <div className="relative">
             {/* Precision Blur Circle - matching Projects section exactly */}
-            <div className="hidden sm:block absolute top-6 left-10 w-20 h-20 bg-maincolor opacity-20 rounded-full blur-[35px] z-0" />
+            <div className="absolute top-6 left-10 w-20 h-20 bg-maincolor opacity-20 rounded-full blur-[35px] z-0" />
 
             <Reveal width="100%">
               <h3 className="relative z-10 text-xs text-white/50 uppercase tracking-[0.2em] mb-5">

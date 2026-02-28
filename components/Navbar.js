@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { useRouter, usePathname } from "next/navigation";
 import {
   FaGithub,
   FaLinkedinIn,
@@ -12,88 +14,117 @@ import {
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const scrollToSection = (id) => {
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleNavClick = (id) => {
     setMobileMenuOpen(false);
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
+    if (pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      router.push(`/?to=${id}`);
+    }
   };
+
+  // Portal overlay with slide-in from left animation
+  const overlay =
+    mobileMenuOpen && mounted
+      ? createPortal(
+          <div
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 9999,
+              animation:
+                "slideInFromLeft 0.35s cubic-bezier(0.4,0,0.2,1) forwards",
+            }}
+            className="bg-[#1d1d1d] flex flex-col items-center justify-center space-y-7"
+          >
+            <style>{`
+            @keyframes slideInFromLeft {
+              from { transform: translateX(-100%); opacity: 0.5; }
+              to   { transform: translateX(0);     opacity: 1; }
+            }
+          `}</style>
+
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-5 right-5 text-white text-2xl p-2"
+              aria-label="Close menu"
+            >
+              <FaTimes />
+            </button>
+
+            <button
+              onClick={() => handleNavClick("hero")}
+              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => handleNavClick("education")}
+              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase text-center"
+            >
+              Experience &amp; Education
+            </button>
+            <button
+              onClick={() => handleNavClick("skills")}
+              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+            >
+              Skills
+            </button>
+            <button
+              onClick={() => handleNavClick("projects")}
+              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => handleNavClick("contact")}
+              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+            >
+              Contact
+            </button>
+
+            <div className="w-16 h-px bg-white/20" />
+
+            <div className="flex space-x-4">
+              <SocialLink
+                href="https://www.linkedin.com/in/vaibhav-jamdhade-06535521b/"
+                icon={<FaLinkedinIn />}
+              />
+              <SocialLink
+                href="https://github.com/vaibhavj20"
+                icon={<FaGithub />}
+              />
+              <SocialLink
+                href="https://x.com/vaibhavj_20"
+                icon={<FaTwitter />}
+              />
+            </div>
+
+            <a
+              href="mailto:vaibhavjamdhade2062001@gmail.com"
+              className="text-sm text-white/50 hover:text-maincolor transition-colors"
+            >
+              vaibhavjamdhade2062001@gmail.com
+            </a>
+          </div>,
+          document.body,
+        )
+      : null;
 
   return (
     <>
-      {/* Mobile Full-Screen Overlay — z-[60] so it covers everything */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#1d1d1d] z-[60] flex flex-col items-center justify-center space-y-7">
-          {/* Single close button inside overlay */}
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="absolute top-5 right-5 text-white text-2xl p-2"
-            aria-label="Close menu"
-          >
-            <FaTimes />
-          </button>
-
-          {/* Section nav links--- */}
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="text-xl text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection("education")}
-            className="text-xl text-white hover:text-maincolor transition-colors tracking-widest uppercase text-center"
-          >
-            Experience &amp; Education
-          </button>
-          <button
-            onClick={() => scrollToSection("skills")}
-            className="text-xl text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-          >
-            Skills
-          </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="text-xl text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="text-xl text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-          >
-            Contact
-          </button>
-
-          {/* Divider */}
-          <div className="w-16 h-px bg-white/20" />
-
-          {/* Social icons */}
-          <div className="flex space-x-4">
-            <SocialLink
-              href="https://www.linkedin.com/in/vaibhav-jamdhade-06535521b/"
-              icon={<FaLinkedinIn />}
-            />
-            <SocialLink
-              href="https://github.com/vaibhavj20"
-              icon={<FaGithub />}
-            />
-            <SocialLink
-              href="https://x.com/vaibhavj_20"
-              icon={<FaTwitter />}
-            />
-          </div>
-
-          <a
-            href="mailto:vaibhavjamdhade2062001@gmail.com"
-            className="text-sm text-white/50 hover:text-maincolor transition-colors"
-          >
-            vaibhavjamdhade2062001@gmail.com
-          </a>
-        </div>
-      )}
+      {overlay}
 
       {/* Main nav bar */}
       <nav className="relative z-50 py-3 hover-target">
@@ -136,15 +167,10 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile top bar — only logo + hamburger, NO X here */}
+          {/* Mobile top bar */}
           <div className="lg:hidden flex items-center justify-between">
             <Link href="/" className="inline-block">
-              <Image
-                src="/images/logo-light.png"
-                alt="Logo"
-                width={50}
-                height={50}
-              />
+              <Image src="/images/fav2.png" alt="Logo" width={36} height={36} />
             </Link>
             <button
               onClick={() => setMobileMenuOpen(true)}

@@ -10,10 +10,9 @@ const CircularProgress = ({ isLoading }) => {
   const handleScroll = () => {
     const totalHeight =
       document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min(
-      Math.max((window.scrollY / totalHeight) * 100, 0),
-      100
-    );
+    const progress = totalHeight > 0
+      ? Math.min(Math.max((window.scrollY / totalHeight) * 100, 0), 100)
+      : 0;
     setScrollProgress(progress);
 
     if (window.scrollY > 100) {
@@ -33,9 +32,8 @@ const CircularProgress = ({ isLoading }) => {
     <>
       {!isLoading && (
         <div
-          className={`fixed bottom-8 right-8 flex items-center justify-center z-50 w-10 h-10 cursor-pointer transition-all duration-500 transform ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-          }`}
+          className={`fixed bottom-8 right-8 flex items-center justify-center z-50 w-10 h-10 cursor-pointer transition-all duration-500 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+            }`}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <svg

@@ -1,4 +1,5 @@
 "use client";
+import { Reveal } from "./Reveal";
 
 const Skills = () => {
   const CategoriesLeft = [
@@ -47,37 +48,43 @@ const Skills = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             {/* Background Glow */}
-            <div className="hidden sm:block absolute top-1/4 -left-10 w-40 h-40 bg-maincolor opacity-5 rounded-full blur-[100px]" />
+            <div className="absolute top-1/4 -left-10 w-40 h-40 bg-maincolor opacity-5 rounded-full blur-[100px]" />
 
             {/* Left Column: Heading + Some Categories */}
             <div className="lg:w-1/3">
               <div className="mb-12 relative">
                 {/* Heading Glow */}
-                <div className="hidden sm:block absolute top-6 left-10 w-20 h-20 bg-maincolor opacity-20 rounded-full blur-2xl z-0" />
+                <div className="absolute top-6 left-10 w-20 h-20 bg-maincolor opacity-20 rounded-full blur-2xl z-0" />
 
-                <h2 className="relative z-10 text-xs text-white/80 uppercase tracking-[0.2em] mb-5">
-                  MY SKILLS
-                </h2>
-                <div className="relative z-10 text-2xl lg:text-4xl font-medium">
-                  <span className="mb-2 block">Skills &</span>
-                  <span className="text-maincolor">Proficiency</span>
-                </div>
+                <Reveal width="100%">
+                  <h2 className="relative z-10 text-xs text-white/80 uppercase tracking-[0.2em] mb-5">
+                    MY SKILLS
+                  </h2>
+                </Reveal>
+                <Reveal width="100%">
+                  <div className="relative z-10 text-2xl lg:text-4xl font-medium">
+                    <span className="mb-2 block">Skills &</span>
+                    <span className="text-maincolor">Proficiency</span>
+                  </div>
+                </Reveal>
               </div>
 
               {/* Technical Tiles on the left - Aligned with DevOps & CI/CD on the right */}
               <div className="space-y-12 lg:pt-[56px]">
                 {CategoriesLeft.map((group, idx) => (
-                  <div key={idx} className="group">
-                    <h3 className="text-sm text-white/80 uppercase tracking-[0.3em] font-bold mb-6 flex items-center gap-3">
-                      <span className="w-8 h-[1px] bg-maincolor/40"></span>
-                      {group.category}
-                    </h3>
-                    <div className="flex flex-wrap gap-4">
-                      {group.skills.map((skill, sIdx) => (
-                        <SkillTile key={sIdx} name={skill} />
-                      ))}
+                  <Reveal key={idx} width="100%" delay={0.1 * idx}>
+                    <div className="group">
+                      <h3 className="text-sm text-white/80 uppercase tracking-[0.3em] font-bold mb-6 flex items-center gap-3">
+                        <span className="w-8 h-[1px] bg-maincolor/40"></span>
+                        {group.category}
+                      </h3>
+                      <div className="flex flex-wrap gap-4">
+                        {group.skills.map((skill, sIdx) => (
+                          <SkillTile key={sIdx} name={skill} />
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
@@ -86,17 +93,19 @@ const Skills = () => {
             <div className="lg:w-2/3">
               <div className="space-y-16">
                 {CategoriesRight.map((group, idx) => (
-                  <div key={idx} className="group">
-                    <h3 className="text-sm text-white/80 uppercase tracking-[0.3em] font-bold mb-6 flex items-center gap-3">
-                      <span className="w-10 h-[1px] bg-white/20 group-hover:bg-maincolor transition-all duration-500"></span>
-                      {group.category}
-                    </h3>
-                    <div className="flex flex-wrap gap-5">
-                      {group.skills.map((skill, sIdx) => (
-                        <SkillTile key={sIdx} name={skill} />
-                      ))}
+                  <Reveal key={idx} width="100%" delay={0.1 * idx}>
+                    <div className="group">
+                      <h3 className="text-sm text-white/80 uppercase tracking-[0.3em] font-bold mb-6 flex items-center gap-3">
+                        <span className="w-10 h-[1px] bg-white/20 group-hover:bg-maincolor transition-all duration-500"></span>
+                        {group.category}
+                      </h3>
+                      <div className="flex flex-wrap gap-5">
+                        {group.skills.map((skill, sIdx) => (
+                          <SkillTile key={sIdx} name={skill} />
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
@@ -118,11 +127,6 @@ const SkillTile = ({ name }) => {
     <div className="relative group cursor-default">
       {/* The decorative box */}
       <div className="relative px-5 py-3 border border-white/10 group-hover:border-maincolor/50 transition-colors duration-300">
-        {/* Corner dots */}
-        <span className="absolute -top-[2px] -left-[2px] w-[4px] h-[4px] bg-white group-hover:bg-maincolor transition-colors duration-300 rounded-full opacity-20 group-hover:opacity-100" />
-        <span className="absolute -top-[2px] -right-[2px] w-[4px] h-[4px] bg-white group-hover:bg-maincolor transition-colors duration-300 rounded-full opacity-20 group-hover:opacity-100" />
-        <span className="absolute -bottom-[2px] -left-[2px] w-[4px] h-[4px] bg-white group-hover:bg-maincolor transition-colors duration-300 rounded-full opacity-20 group-hover:opacity-100" />
-        <span className="absolute -bottom-[2px] -right-[2px] w-[4px] h-[4px] bg-white group-hover:bg-maincolor transition-colors duration-300 rounded-full opacity-20 group-hover:opacity-100" />
 
         {/* Text */}
         <span className="text-white/70 group-hover:text-white text-sm sm:text-base font-medium tracking-wide transition-colors duration-300">

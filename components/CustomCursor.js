@@ -5,8 +5,15 @@ import React, { useState, useEffect } from "react";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isPointerDevice, setIsPointerDevice] = useState(false);
 
   useEffect(() => {
+    // Only show custom cursor on devices with a fine pointer (mouse), not touch
+    const hasFinePinter = window.matchMedia("(pointer: fine)").matches;
+    setIsPointerDevice(hasFinePinter);
+
+    if (!hasFinePinter) return;
+
     const moveCursor = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -43,6 +50,8 @@ const CustomCursor = () => {
       document.removeEventListener("mouseleave", handleMouseLeave, true);
     };
   }, []);
+
+  if (!isPointerDevice) return null;
 
   return (
     <div

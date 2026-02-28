@@ -15,8 +15,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col lg:flex-row justify-between px-4 sm:px-6 py-12 sm:py-16 lg:p-10 min-w-0">
-        {/* Decorative blur dot */}
-        <div className="hidden lg:block absolute top-80 right-1/4 w-20 h-20 bg-maincolor opacity-40 rounded-full blur-3xl" />
+
 
         {/* Left Section — Profile card */}
         <div className="flex flex-col items-center space-y-6 w-full lg:w-[400px] border border-white/5 rounded-md p-4 lg:p-8 bg-[#1d1d1d] lg:mt-[30px] mb-8 lg:mb-0">
@@ -92,6 +91,11 @@ const Hero = () => {
                 <span className="relative px-3 py-1">DevOps Engineer</span>
               </span>
             </h1>
+
+            {/* Decorative blur dot — sits between headings and subtext */}
+            <div className="relative h-0 overflow-visible">
+              <div className="absolute left-1/2 lg:left-1/4 -translate-x-1/2 lg:-translate-x-0 -top-2 w-24 h-24 bg-maincolor opacity-30 rounded-full blur-3xl pointer-events-none" />
+            </div>
 
             <p className="pt-2 text-white/60 text-sm sm:text-base font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed">
               DevOps fresher with hands-on knowledge of cloud-native tech, CI/CD pipelines,
