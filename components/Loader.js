@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 
-export default function Loader({ setIsLoading }) {
+export default function Loader({ setIsLoading, duration = 2000 }) {
   const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
-    // Start the overlay animation after 2 seconds
-    setTimeout(() => {
+    // Start the overlay animation after specified duration
+    const timer = setTimeout(() => {
       setShowOverlay(true);
       // Set isLoading to false immediately when overlay starts
       setIsLoading(false);
-    }, 2000);
-  }, [setIsLoading]);
+    }, duration);
+    return () => clearTimeout(timer);
+  }, [setIsLoading, duration]);
 
   return (
     <div className="fixed inset-0 z-[99999999999999] flex items-center justify-center overflow-hidden">
       {/* SVG overlay */}
       <div
-        className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
-          showOverlay ? "translate-y-[-100%]" : "translate-y-[0%]"
-        }`}
+        className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${showOverlay ? "translate-y-[-100%]" : "translate-y-[0%]"
+          }`}
       >
         <svg
           className="absolute top-0 w-screen h-[110vh] fill-[#131313]"
@@ -31,9 +31,8 @@ export default function Loader({ setIsLoading }) {
 
       {/* Loading text */}
       <div
-        className={`relative z-20 transition-opacity duration-500 ${
-          showOverlay ? "opacity-0" : "opacity-100"
-        }`}
+        className={`relative z-20 transition-opacity duration-500 ${showOverlay ? "opacity-0" : "opacity-100"
+          }`}
       >
         <div className="text-[17px] font-extralight tracking-[28px] uppercase">
           {["L", "o", "a", "d", "i", "n", "g"].map((letter, index) => (
