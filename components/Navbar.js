@@ -35,7 +35,7 @@ export default function Navbar() {
             <FaTimes />
           </button>
 
-          {/* Section nav links */}
+          {/* Section nav links--- */}
           <button
             onClick={() => scrollToSection("hero")}
             className="text-xl text-white hover:text-maincolor transition-colors tracking-widest uppercase"
