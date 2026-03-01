@@ -8,8 +8,8 @@ const Hero = () => {
     <div id="hero" className="relative font-sora">
       {/* Background shape with responsive clip-path */}
       <div className="absolute inset-0">
-        <div className="w-full h-full lg:h-[610px] bg-transparent relative overflow-hidden rounded-2xl lg:rounded-none">
-          <div className="absolute inset-0 bg-[#1d1d1d] border border-white/5 clip-path-hero-desktop lg:clip-path-hero-mobile rounded-2xl lg:rounded-none" />
+        <div className="w-full h-full lg:h-[610px] bg-transparent relative overflow-hidden rounded-t-2xl rounded-b-none">
+          <div className="absolute inset-0 bg-[#1d1d1d] border border-white/5 clip-path-hero-desktop lg:clip-path-hero-mobile rounded-t-2xl rounded-b-none" />
         </div>
       </div>
 

@@ -78,7 +78,7 @@ const Main = () => {
     <div className="relative min-h-screen font-sora px-3 sm:px-5 py-3">
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-transparent">
-          <div className="absolute inset-0 bg-[#1d1d1d] clip-path-below rounded-md" />
+          <div className="absolute inset-0 bg-[#1d1d1d] border border-white/5 clip-path-below rounded-b-2xl rounded-t-none" />
         </div>
       </div>
 
@@ -104,14 +104,14 @@ const Main = () => {
             0 100%,
             100% 100%
           );
-          border-radius: 6px;
+          border-radius: 0 0 16px 16px;
         }
 
         @media (max-width: 1023px) {
           .clip-path-below {
             clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
             -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-            border-radius: 6px;
+            border-radius: 0 0 16px 16px;
           }
         }
 
