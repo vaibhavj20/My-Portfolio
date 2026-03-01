@@ -34,7 +34,7 @@ export default function Loader({ setIsLoading, duration = 2000 }) {
         className={`relative z-20 transition-opacity duration-500 ${showOverlay ? "opacity-0" : "opacity-100"
           }`}
       >
-        <div className="text-[17px] font-extralight tracking-[28px] uppercase">
+        <div className="text-[14px] sm:text-[17px] font-extralight tracking-[12px] sm:tracking-[28px] -mr-[12px] sm:-mr-[28px] uppercase">
           {["L", "o", "a", "d", "i", "n", "g"].map((letter, index) => (
             <span
               key={index}

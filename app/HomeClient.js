@@ -35,7 +35,7 @@ function HomeContent() {
                     }`}
             >
                 <Background />
-                <div className="relative px-5 sm:px-10 md:px-20 lg:px-20 xl:px-20 2xl:px-48">
+                <div className="relative px-0 sm:px-10 md:px-20 lg:px-20 xl:px-20 2xl:px-48">
                     <Navbar />
                     <Hero />
                     <div className="">

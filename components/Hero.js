@@ -8,17 +8,17 @@ const Hero = () => {
     <div id="hero" className="relative font-sora">
       {/* Background shape with responsive clip-path */}
       <div className="absolute inset-0">
-        <div className="w-full h-full lg:h-[610px] bg-transparent relative overflow-hidden rounded-md">
-          <div className="absolute inset-0 bg-[#1d1d1d] clip-path-hero-desktop lg:clip-path-hero-mobile" />
+        <div className="w-full h-full lg:h-[610px] bg-transparent relative overflow-hidden rounded-2xl lg:rounded-none">
+          <div className="absolute inset-0 bg-[#1d1d1d] clip-path-hero-desktop lg:clip-path-hero-mobile rounded-2xl lg:rounded-none" />
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col lg:flex-row justify-between px-4 sm:px-6 py-12 sm:py-16 lg:p-10 min-w-0">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-between px-6 sm:px-6 py-12 sm:py-16 lg:p-10 min-w-0">
 
 
         {/* Left Section — Profile card */}
-        <div className="flex flex-col items-center space-y-6 w-full lg:w-[400px] border border-white/5 rounded-md p-4 lg:p-8 bg-[#1d1d1d] lg:mt-[30px] mb-8 lg:mb-0">
+        <div className="flex flex-col items-center space-y-6 w-full lg:w-[400px] border border-white/5 rounded-md p-4 lg:p-8 bg-[#1d1d1d] lg:mt-[30px] mb-4 lg:mb-0">
           <div className="relative w-[200px] sm:w-[250px] lg:w-[285px] h-56 sm:h-64 min-w-0">
             <Image
               src="/images/profile.jpg"
@@ -32,7 +32,7 @@ const Hero = () => {
               Vaibhav Jamdhade
             </h2>
             <p className="text-white/80 text-[12px] text-center">
-              AVAILABLE FOR FREELANCE
+              ASPIRING DEVOPS ENGINEER
             </p>
           </div>
 
@@ -68,18 +68,18 @@ const Hero = () => {
         {/* Right Section */}
         <div className="w-full lg:w-3/4 lg:pl-16 xl:pl-20 text-center lg:text-left min-w-0">
           <div className="mb-8 sm:mb-12 mt-4 lg:mt-8 font-medium space-y-3">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
               Hello, I&apos;m{" "}
               <span className="text-maincolor">Vaibhav Jamdhade</span>,
             </h1>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
               Frontend Developer
             </h1>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
               <span className="text-white/40">&amp;</span>{" "}
               {/* Decorative bordered box with corner dots */}
-              <span className="relative inline-block">
+              <span className="relative inline-block mt-2 sm:mt-0">
                 {/* Border box */}
                 <span className="absolute inset-0 border border-white/20 rounded-sm pointer-events-none" />
                 {/* Corner dots */}
@@ -97,10 +97,8 @@ const Hero = () => {
               <div className="absolute left-1/2 lg:left-1/4 -translate-x-1/2 lg:-translate-x-0 -top-2 w-24 h-24 bg-maincolor opacity-30 rounded-full blur-3xl pointer-events-none" />
             </div>
 
-            <p className="pt-2 text-white/60 text-sm sm:text-base font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              DevOps fresher with hands-on knowledge of cloud-native tech, CI/CD pipelines,
-              Kubernetes &amp; IaC — combined with frontend expertise in React &amp; Next.js to
-              build scalable, reliable applications end-to-end.
+            <p className="pt-4 text-white/60 text-xs sm:text-base font-normal max-w-xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0">
+              I don't just build apps, I build the systems running them. Blending Next.js with Cloud-Native automation, I turn complex deployments into a "push-to-deploy" reality. I automate.
             </p>
           </div>
 
