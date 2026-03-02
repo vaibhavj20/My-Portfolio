@@ -9,6 +9,7 @@ import Navbar from "./Navbar2";
 import About from "./About";
 import Skills from "./Skills";
 import Education from "./Education";
+/*import Certifications from "./Certifications";*/
 import Projects from "./Projects";
 import Contact from "./Contact";
 
@@ -89,6 +90,7 @@ const Main = () => {
           {/* <About /> */}
           <Skills />
           <Projects />
+          {/* <Certifications />*/}
           <Contact />
         </div>
       </div>
@@ -98,8 +100,8 @@ const Main = () => {
           clip-path: polygon(100% 0, 42% 0, 35% 2%, 0 2%, 0 100%, 100% 100%);
           -webkit-clip-path: polygon(
             100% 0,
-            41% 0,
-            33.5% 2%,
+            40.5% 0,
+            33% 2%,
             0 2%,
             0 100%,
             100% 100%

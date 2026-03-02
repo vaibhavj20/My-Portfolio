@@ -38,88 +38,88 @@ export default function Navbar() {
   const overlay =
     mobileMenuOpen && mounted
       ? createPortal(
-          <div
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 9999,
-              animation:
-                "slideInFromLeft 0.35s cubic-bezier(0.4,0,0.2,1) forwards",
-            }}
-            className="bg-[#1d1d1d] flex flex-col items-center justify-center space-y-7"
-          >
-            <style>{`
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            animation:
+              "slideInFromLeft 0.35s cubic-bezier(0.4,0,0.2,1) forwards",
+          }}
+          className="bg-[#1d1d1d] flex flex-col items-center justify-center space-y-7"
+        >
+          <style>{`
             @keyframes slideInFromLeft {
               from { transform: translateX(-100%); opacity: 0.5; }
               to   { transform: translateX(0);     opacity: 1; }
             }
           `}</style>
 
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="absolute top-5 right-5 text-white text-2xl p-2"
-              aria-label="Close menu"
-            >
-              <FaTimes />
-            </button>
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="absolute top-5 right-5 text-white text-2xl p-2"
+            aria-label="Close menu"
+          >
+            <FaTimes />
+          </button>
 
-            <button
-              onClick={() => handleNavClick("hero")}
-              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => handleNavClick("education")}
-              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase text-center"
-            >
-              Experience &amp; Education
-            </button>
-            <button
-              onClick={() => handleNavClick("skills")}
-              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-            >
-              Skills
-            </button>
-            <button
-              onClick={() => handleNavClick("projects")}
-              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => handleNavClick("contact")}
-              className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
-            >
-              Contact
-            </button>
+          <button
+            onClick={() => handleNavClick("hero")}
+            className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => handleNavClick("education")}
+            className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase text-center"
+          >
+            Experience &amp; Education
+          </button>
+          <button
+            onClick={() => handleNavClick("skills")}
+            className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+          >
+            Skills
+          </button>
+          <button
+            onClick={() => handleNavClick("projects")}
+            className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => handleNavClick("contact")}
+            className="text-base text-white hover:text-maincolor transition-colors tracking-widest uppercase"
+          >
+            Contact
+          </button>
 
-            <div className="w-16 h-px bg-white/20" />
+          <div className="w-16 h-px bg-white/20" />
 
-            <div className="flex space-x-4">
-              <SocialLink
-                href="https://www.linkedin.com/in/vaibhav-jamdhade-06535521b/"
-                icon={<FaLinkedinIn />}
-              />
-              <SocialLink
-                href="https://github.com/vaibhavj20"
-                icon={<FaGithub />}
-              />
-              <SocialLink
-                href="https://x.com/vaibhavj_20"
-                icon={<FaTwitter />}
-              />
-            </div>
+          <div className="flex space-x-4">
+            <SocialLink
+              href="https://www.linkedin.com/in/vaibhav-jamdhade-06535521b/"
+              icon={<FaLinkedinIn />}
+            />
+            <SocialLink
+              href="https://github.com/vaibhavj20"
+              icon={<FaGithub />}
+            />
+            <SocialLink
+              href="https://x.com/vaibhavj_20"
+              icon={<FaTwitter />}
+            />
+          </div>
 
-            <a
-              href="mailto:vaibhavjamdhade2062001@gmail.com"
-              className="text-sm text-white/50 hover:text-maincolor transition-colors"
-            >
-              vaibhavjamdhade2062001@gmail.com
-            </a>
-          </div>,
-          document.body,
-        )
+          <a
+            href="mailto:vaibhavjamdhade2062001@gmail.com"
+            className="text-sm text-white/50 hover:text-maincolor transition-colors"
+          >
+            vaibhavjamdhade2062001@gmail.com
+          </a>
+        </div>,
+        document.body,
+      )
       : null;
 
   return (
