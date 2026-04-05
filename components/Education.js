@@ -58,22 +58,16 @@ const Education = () => {
                     <p className="text-sm lg:text-base">ByteUp AI</p>
                   </div>
                 </div>
-                <p className="text-white/80 ml-7 lg:ml-9 text-sm lg:text-base">Aug 2024 – Present</p>
+                <p className="text-white/80 ml-7 lg:ml-9 text-sm lg:text-base">Aug 2024 – Jun 2025</p>
                 <ul className="text-white/80 ml-7 lg:ml-9 list-disc space-y-2 pl-4 text-sm lg:text-base">
                   <li>
-                    Leading the development of an AI-powered chatbot product
-                    website using Next.js, implementing SEO best practices and
-                    modern web technologies.
+                    Developed an AI-powered chatbot product website (OneClickAgents) using Next.js, improving page performance and SEO ranking by 35%.
                   </li>
                   <li>
-                    Building responsive client websites with React.js, Tailwind
-                    CSS, and GSAP, ensuring seamless user experiences and optimal
-                    performance.
+                    Built responsive client websites using React, Tailwind CSS, HTML, CSS, and JavaScript with API integrations, enhancing load speed and mobile responsiveness by 40%.
                   </li>
                   <li>
-                    Collaborating with the development team on various projects,
-                    contributing to code reviews, and maintaining high-quality
-                    standards through Git version control.
+                    Designed user interfaces and collaborated on GitHub repositories, improving UI consistency and overall user experience by 30% through optimized components and clean code practices.
                   </li>
                 </ul>
               </div>
